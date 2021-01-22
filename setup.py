@@ -5,13 +5,13 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="ftx-python",
-    version="0.0.1",
+    version="0.0.2",
     author="Ben Alheit",
     author_email="alheitb@gmail.com",
     description="A python client for the FTX exchange",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/pypa/sampleproject",
+    url="https://github.com/alhben001/ftx_python",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
