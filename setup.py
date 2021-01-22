@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="ftx-python",
-    version="0.0.2",
+    version="0.0.3",
     author="Ben Alheit",
     author_email="alheitb@gmail.com",
     description="A python client for the FTX exchange",
