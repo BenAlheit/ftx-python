@@ -11,7 +11,7 @@ setuptools.setup(
     description="A python client for the FTX exchange",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/alhben001/ftx_python",
+    url="https://github.com/BenAlheit/ftx_python",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
@@ -19,7 +19,8 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     install_requires=[
-          'websockets'
-      ],
+        'websockets',
+        'ciso8601'
+    ],
     python_requires='>=3.6',
 )

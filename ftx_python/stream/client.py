@@ -1,8 +1,9 @@
 import asyncio
+
 import websockets
 
-from ftx_stream.channel import Channel
-from ftx_stream.subscription import Subscription
+from ftx_python.stream.channel import Channel
+from ftx_python.stream.subscription import Subscription
 
 import json
 
@@ -38,10 +39,10 @@ class FtxWebsocketClient:
             lambda: {side: defaultdict(float) for side in {'bids', 'asks'}})
 
     @property
-    def orderbooks(self):
+    def orderbooks(self) -> Dict:
         return self._orderbooks.copy()
 
-    async def _send_json(self, msg: Dict):
+    async def _send_json(self, msg: Dict) -> None:
         if self._ws is None:
             raise Exception(f'Trying to send message {msg} but the websocket is not connected.')
 
@@ -103,7 +104,7 @@ class FtxWebsocketClient:
             await self._unsubscribe({'market': market, 'channel': 'orderbook'})
             await self._subscribe({'market': market, 'channel': 'orderbook'})
 
-    async def run(self):
+    async def run(self) -> None:
         async with websockets.connect(self._ENDPOINT, ssl=True, ping_interval=self._PING_INTERVAL) as self._ws:
 
             if None not in [self._api_key, self._api_secret]:

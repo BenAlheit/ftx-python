@@ -1,4 +1,4 @@
-from ftx_stream.channel import Channel
+from ftx_python.stream.channel import Channel
 
 
 class Subscription:
